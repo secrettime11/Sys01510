@@ -25,10 +25,7 @@ namespace Sys01510
 
         private void hbtn_database_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
-                Console.WriteLine(_path.db);
-            }
+            
         }
     }
 }

@@ -82,7 +82,8 @@
     <Compile Include="mainF.Designer.cs">
       <DependentUpon>mainF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\_path.cs" />
+    <Compile Include="Class\_path.cs" />
+    <Compile Include="Class\_sqlite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="mainF.resx">
@@ -114,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\icon\" />
+    <Folder Include="Model\" />
     <Folder Include="Script\" />
   </ItemGroup>
   <ItemGroup>
