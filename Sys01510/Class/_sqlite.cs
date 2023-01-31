@@ -215,10 +215,7 @@ namespace Sys01510.Model
 
             int header_count = header_.Count();
             int counter = 1;
-            // 建立 SQLite 資料庫
-            if (!File.Exists(database))
-                CreateDatabase(database);
-
+            
             // Final string send to SQL
             try
             {
