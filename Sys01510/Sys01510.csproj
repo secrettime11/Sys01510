@@ -93,6 +93,7 @@
     <Compile Include="Class\_path.cs" />
     <Compile Include="Class\_sqlite.cs" />
     <Compile Include="Model\_employee.cs" />
+    <Compile Include="Model\_sql_header.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="mainF.resx">

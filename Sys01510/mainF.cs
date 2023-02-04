@@ -32,16 +32,17 @@ namespace Sys01510
 
         private void hbtn_database_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void hbtn_test_Click(object sender, EventArgs e)
         {
-           _excel excel = new _excel();
+            _excel excel = new _excel();
+            _employee _Employee = new _employee();
             var data = excel.ReadExcel(@"D:\478646資料檔\Desktop\電腦清單(20221213).xlsx");
             foreach (var item in data)
             {
-                Console.WriteLine(item);
+                
             }
         }
     }

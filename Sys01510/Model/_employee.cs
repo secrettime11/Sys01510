@@ -10,7 +10,7 @@ namespace Sys01510.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Group { get; set; }
+        public string Team { get; set; }
         public string Title { get; set; }
         public string PCId { get; set; }
         public string Ip { get; set; }

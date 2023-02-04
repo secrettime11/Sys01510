@@ -200,28 +200,19 @@ namespace Sys01510.Model
         }
 
 
-        /*  LISTED  */
-
-        /// <summary>
-        /// Add data to sqlite
-        /// </summary>
-        /// <param name="database">database name</param>
-        /// <param name="tableName">table name</param>
-        /// <param name="header_">header</param>
-        /// <param name="data_">data list</param>
-        /// <param name="insertString">command</param>
-        public bool DataAdd(string database, string tableName, List<string> header_, List<string> data_, string insertString)
+        public bool EmployeeDataAdd(string database, string tableName, List<string> header_, List<_employee> data_, string insertString)
         {
 
             int header_count = header_.Count();
             int counter = 1;
+            int datad_counter = 0;
             
             // Final string send to SQL
             try
             {
                 foreach (var data in data_)
                 {
-                    counter = 1;
+                    //counter = 1;
 
                     insertString += $@"INSERT INTO {tableName} (";
                     foreach (var header in header_)
@@ -234,14 +225,21 @@ namespace Sys01510.Model
                         counter++;
                     }
                     insertString += $" VALUES (";
-                    string[] value = data.Split('_');
-                    for (int i = 0; i < value.Count(); i++)
+                    foreach (var item in data_)
                     {
-                        if (i == value.Count() - 1)
-                            insertString += $"'{value[i]}');" + Environment.NewLine;
-                        else
-                            insertString += $"'{value[i]}', ";
+                        //if (datad_counter == data_.Count() - 1)
+                        //    insertString += $"'{value[i]}');" + Environment.NewLine;
+                        //else
+                        //    insertString += $"'{value[i]}', ";
                     }
+                    //string[] value = data.Split('_');
+                    //for (int i = 0; i < value.Count(); i++)
+                    //{
+                    //    if (i == value.Count() - 1)
+                    //        insertString += $"'{value[i]}');" + Environment.NewLine;
+                    //    else
+                    //        insertString += $"'{value[i]}', ";
+                    //}
                 }
                 // Insert into datatable
                 Manipulate(database, insertString);

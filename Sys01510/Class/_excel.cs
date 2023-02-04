@@ -1,4 +1,5 @@
 ﻿using ExcelDataReader;
+using Sys01510.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,10 +17,10 @@ namespace Sys01510.Class
         /// </summary>
         /// <param name="FilePath"> file path</param>
         /// <returns></returns>
-        public List<string> ReadExcel(string FilePath)
+        public List<_employee> ReadExcel(string FilePath)
         {
             // Return list
-            List<string> Result = new List<string>();
+            List<_employee> Result = new List<_employee>();
             DataSet ds;
 
             if (File.Exists(FilePath))
@@ -79,24 +80,14 @@ namespace Sys01510.Class
                             ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
                             {
                                 // Setting ignore header ?
-                                UseHeaderRow = false
+                                // true = no header
+                                UseHeaderRow = true
                             }
                         });
-
-                        // Show dataset
-                        var table = ds.Tables[0];
-                        for (int row = 0; row < table.Rows.Count; row++)
-                        {
-                            string data = "";
-                            for (var col = 0; col < table.Columns.Count; col++)
-                            {
-                                data += table.Rows[row][col].ToString().Trim() + "_";
-                            }
-                            Result.Add(data + "_" + $"{row + 1}");
-                        }
                     }
+                    Result = EmployeeData(ds);
                 }
-                Console.WriteLine("End");
+                Console.WriteLine("Read end");
                 return Result;
             }
             else
@@ -105,5 +96,28 @@ namespace Sys01510.Class
             }
             return Result;
         }
+
+        private List<_employee> EmployeeData(DataSet ds)
+        {
+            List<_employee> Result = new List<_employee>();
+            // Show dataset
+            var table = ds.Tables[0];
+            // row
+            for (int row = 0; row < table.Rows.Count; row++)
+            {
+                _employee employee = new _employee();
+                employee.Id = Convert.ToInt32(table.Rows[row][0].ToString().Trim());
+                employee.Name = table.Rows[row][1].ToString().Trim();
+                employee.Team = table.Rows[row][2].ToString().Trim();
+                employee.Title = table.Rows[row][3].ToString().Trim();
+                employee.PCId = table.Rows[row][4].ToString().Trim();
+                employee.Ip = table.Rows[row][5].ToString().Trim();
+                employee.Extension = table.Rows[row][6].ToString().Trim();
+                Result.Add(employee);
+            }
+            return Result;
+        }
+
+
     }
 }
