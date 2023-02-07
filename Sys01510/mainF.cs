@@ -40,10 +40,21 @@ namespace Sys01510
             _excel excel = new _excel();
             _employee _Employee = new _employee();
             var data = excel.ReadExcel(@"D:\478646資料檔\Desktop\電腦清單(20221213).xlsx");
-            foreach (var item in data)
+            string insertString = "";
+            if (_Sqlite.EmployeeDataAdd(_path.db, "employees", _sql_header.Employee, data, insertString))
             {
-                
+                Console.WriteLine("Finish");
             }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+
+        private void hbtn_employees_Click(object sender, EventArgs e)
+        {
+            Employees employees = new Employees();
+            employees.Show();
         }
     }
 }

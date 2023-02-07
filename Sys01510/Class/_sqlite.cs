@@ -202,45 +202,35 @@ namespace Sys01510.Model
 
         public bool EmployeeDataAdd(string database, string tableName, List<string> header_, List<_employee> data_, string insertString)
         {
-
             int header_count = header_.Count();
             int counter = 1;
-            int datad_counter = 0;
-            
+            int data_counter = 0;
+
             // Final string send to SQL
             try
             {
-                foreach (var data in data_)
-                {
-                    //counter = 1;
+                //counter = 1;
 
-                    insertString += $@"INSERT INTO {tableName} (";
-                    foreach (var header in header_)
-                    {
-                        // Last column
-                        if (counter == header_count)
-                            insertString += $"{header})";
-                        else
-                            insertString += $"{header}, ";
-                        counter++;
-                    }
-                    insertString += $" VALUES (";
-                    foreach (var item in data_)
-                    {
-                        //if (datad_counter == data_.Count() - 1)
-                        //    insertString += $"'{value[i]}');" + Environment.NewLine;
-                        //else
-                        //    insertString += $"'{value[i]}', ";
-                    }
-                    //string[] value = data.Split('_');
-                    //for (int i = 0; i < value.Count(); i++)
-                    //{
-                    //    if (i == value.Count() - 1)
-                    //        insertString += $"'{value[i]}');" + Environment.NewLine;
-                    //    else
-                    //        insertString += $"'{value[i]}', ";
-                    //}
+                insertString += $@"INSERT INTO {tableName} (";
+                foreach (var header in header_)
+                {
+                    // Last column
+                    if (counter == header_count)
+                        insertString += $"{header})";
+                    else
+                        insertString += $"{header}, ";
+                    counter++;
                 }
+                insertString += $" VALUES ";
+                foreach (var item in data_)
+                {
+                    if (data_counter == data_.Count() - 1)
+                        insertString += $"('{item.Id}','{item.Name}','{item.Team}','{item.Title}','{item.PCId}','{item.Ip}','{item.Extension}');" + Environment.NewLine;
+                    else
+                        insertString += $"('{item.Id}','{item.Name}','{item.Team}','{item.Title}','{item.PCId}','{item.Ip}','{item.Extension}'),";
+                    data_counter++;
+                }
+                Console.WriteLine(insertString);
                 // Insert into datatable
                 Manipulate(database, insertString);
                 return true;
