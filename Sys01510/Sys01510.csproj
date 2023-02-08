@@ -86,13 +86,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\_excel.cs" />
-    <Compile Include="Class\_func.cs" />
-    <Compile Include="Employees.cs">
+    <Compile Include="addempF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employees.Designer.cs">
-      <DependentUpon>Employees.cs</DependentUpon>
+    <Compile Include="addempF.Designer.cs">
+      <DependentUpon>addempF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\_excel.cs" />
+    <Compile Include="Class\_func.cs" />
+    <Compile Include="editempF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editempF.Designer.cs">
+      <DependentUpon>editempF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeesF.Designer.cs">
+      <DependentUpon>EmployeesF.cs</DependentUpon>
     </Compile>
     <Compile Include="LinqToDB.Templates\CopyMe.SQLite1.generated.cs">
       <AutoGen>True</AutoGen>
@@ -111,8 +123,14 @@
     <Compile Include="Model\_sql_header.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Employees.resx">
-      <DependentUpon>Employees.cs</DependentUpon>
+    <EmbeddedResource Include="addempF.resx">
+      <DependentUpon>addempF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editempF.resx">
+      <DependentUpon>editempF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeesF.resx">
+      <DependentUpon>EmployeesF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainF.resx">
       <DependentUpon>mainF.cs</DependentUpon>

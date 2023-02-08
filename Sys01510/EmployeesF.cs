@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace Sys01510
 {
-    public partial class Employees : Form
+    public partial class EmployeesF : Form
     {
         _sqlite _Sqlite = new _sqlite();
         _func _Func = new _func();
-
-        public Employees()
+        MisDB db = new MisDB();
+        public EmployeesF()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -36,15 +36,10 @@ namespace Sys01510
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            //FEdit frm = new FEdit();
-            //frm.Render();
-            //frm.ShowDialogWithMask();
-            //if (frm.IsOK)
-            //{
-            //    ShowSuccessDialog(frm.Person.ToString());
-            //}
+            addempF addempF = new addempF();
+            addempF.ShowDialog();
 
-            //frm.Dispose();
+            GetEmpAll();
         }
 
         /// <summary>
@@ -92,7 +87,8 @@ namespace Sys01510
             {
                 var query =
                     (from c in db.Employees
-                     where  c.Id.ToString().Contains(id) && c.Name.Contains(name)
+                     where c.Id.ToString().Contains(id) && c.Name.Contains(name) && c.PCId.Contains(pcid) && c.Title.Contains(title)
+                     && c.Team.Contains(team) && c.Ip.Contains(ip) && c.Extension.Contains(extension)
                      select c).ToList();
                 List<_employee> data = new List<_employee>();
                 foreach (var item in query)
@@ -113,6 +109,53 @@ namespace Sys01510
                     dgv_employee.DataSource = OutputTable;
                 });
             }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            txt_id.Clear();
+            txt_ip.Clear();
+            txt_name.Clear();
+            txt_pcid.Clear();
+            cmb_team.Clear();
+            cmb_title.Clear();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            string idList = string.Empty;
+            // 取得選取rowID
+            foreach (DataGridViewRow row in dgv_employee.SelectedRows)
+            {
+                idList += $"{row.Cells[0].Value},";
+            }
+            idList = idList.TrimEnd(',');
+            _Sqlite.EmployeeDataDelete(_path.db, _path.db_employee, idList);
+
+            GetEmpAll();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            //List<_employee> data = new List<_employee>();
+
+            //for (int rows = 0; rows < dgv_employee.Rows.Count - 1; rows++)
+            //{
+            //    _employee temp = new _employee();
+            //    temp.Id = Convert.ToInt32(dgv_employee.Rows[rows].Cells[0].Value.ToString());
+            //    temp.Name = dgv_employee.Rows[rows].Cells[1].Value.ToString();
+            //    temp.Team = dgv_employee.Rows[rows].Cells[2].Value.ToString();
+            //    temp.Title = dgv_employee.Rows[rows].Cells[3].Value.ToString();
+            //    temp.PCId = dgv_employee.Rows[rows].Cells[4].Value.ToString();
+            //    temp.Ip = dgv_employee.Rows[rows].Cells[5].Value.ToString();
+            //    temp.Extension = dgv_employee.Rows[rows].Cells[6].Value.ToString(); ;
+            //    data.Add(temp);
+            //}
+            var id = Convert.ToInt32(dgv_employee.Rows[dgv_employee.SelectedIndex].Cells[0].Value);
+            var query = (from c in db.Employees where c.Id == id select c).FirstOrDefault();
+
+            editempF editempF = new editempF(query);
+            editempF.ShowDialog();
         }
     }
 }

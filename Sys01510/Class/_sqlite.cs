@@ -200,8 +200,9 @@ namespace Sys01510.Model
         }
 
 
-        public bool EmployeeDataAdd(string database, string tableName, List<string> header_, List<_employee> data_, string insertString)
+        public bool EmployeeDataAdd(string database, string tableName, List<string> header_, List<_employee> data_)
         {
+            string insertString = String.Empty;
             int header_count = header_.Count();
             int counter = 1;
             int data_counter = 0;
@@ -240,6 +241,40 @@ namespace Sys01510.Model
                 return false;
             }
 
+        }
+        public bool EmployeeDataDelete(string database, string tableName, string idList)
+        {
+            string insertString = String.Empty;
+
+            // Final string send to SQL
+            try
+            {
+                insertString += $@"DELETE FROM {tableName} WHERE ID IN({idList})";
+                Manipulate(database, insertString);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        public bool EmployeeDataUpdate(string database, string tableName, List<string> header_, _employee data_)
+        {
+            string insertString = String.Empty;
+
+            // Final string send to SQL
+            try
+            {
+                insertString += $@"UPDATE {tableName} SET Id={data_.Id},Name={data_.Name},Team={data_.Team},Title={data_.Title},PCId={data_.PCId},Ip={data_.Ip},Extension={data_.Extension} WHERE Id == {data_.Id}";
+                Manipulate(database, insertString);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public string CreateTableString(string tableName, List<string> header_)
         {

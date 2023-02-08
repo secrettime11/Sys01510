@@ -10,5 +10,6 @@ namespace Sys01510.Model
     public static class _path
     {
         public static string db = $@"{Application.StartupPath}\mis.db";
+        public const string db_employee = "employees";
     }
 }

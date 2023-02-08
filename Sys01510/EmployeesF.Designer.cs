@@ -1,6 +1,6 @@
 ﻿namespace Sys01510
 {
-    partial class Employees
+    partial class EmployeesF
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesF));
             this.dgv_employee = new Sunny.UI.UIDataGridView();
             this.btn_add = new Sunny.UI.UIButton();
             this.btn_update = new Sunny.UI.UIButton();
-            this.btn_dalete = new Sunny.UI.UIButton();
+            this.btn_delete = new Sunny.UI.UIButton();
             this.btn_reload = new Sunny.UI.UIButton();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.btn_clear = new Sunny.UI.UISymbolButton();
             this.btn_search = new Sunny.UI.UISymbolButton();
             this.cmb_title = new Sunny.UI.UIComboBox();
             this.cmb_team = new Sunny.UI.UIComboBox();
@@ -79,8 +80,9 @@
             this.dgv_employee.EnableHeadersVisualStyles = false;
             this.dgv_employee.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgv_employee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.dgv_employee.Location = new System.Drawing.Point(12, 108);
+            this.dgv_employee.Location = new System.Drawing.Point(12, 119);
             this.dgv_employee.Name = "dgv_employee";
+            this.dgv_employee.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -110,7 +112,7 @@
             this.btn_add.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
             this.btn_add.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
             this.btn_add.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_add.Location = new System.Drawing.Point(725, 108);
+            this.btn_add.Location = new System.Drawing.Point(725, 119);
             this.btn_add.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_add.Name = "btn_add";
             this.btn_add.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
@@ -133,7 +135,7 @@
             this.btn_update.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(124)))), ((int)(((byte)(32)))));
             this.btn_update.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(124)))), ((int)(((byte)(32)))));
             this.btn_update.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_update.Location = new System.Drawing.Point(725, 154);
+            this.btn_update.Location = new System.Drawing.Point(725, 165);
             this.btn_update.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_update.Name = "btn_update";
             this.btn_update.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
@@ -145,28 +147,30 @@
             this.btn_update.TabIndex = 2;
             this.btn_update.Text = "修改";
             this.btn_update.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // btn_dalete
+            // btn_delete
             // 
-            this.btn_dalete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_dalete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btn_dalete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btn_dalete.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.btn_dalete.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_dalete.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_dalete.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_dalete.Location = new System.Drawing.Point(725, 200);
-            this.btn_dalete.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btn_dalete.Name = "btn_dalete";
-            this.btn_dalete.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btn_dalete.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.btn_dalete.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_dalete.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_dalete.Size = new System.Drawing.Size(87, 35);
-            this.btn_dalete.Style = Sunny.UI.UIStyle.Red;
-            this.btn_dalete.TabIndex = 3;
-            this.btn_dalete.Text = "刪除";
-            this.btn_dalete.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_delete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_delete.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btn_delete.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_delete.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_delete.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_delete.Location = new System.Drawing.Point(725, 211);
+            this.btn_delete.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_delete.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btn_delete.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_delete.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_delete.Size = new System.Drawing.Size(87, 35);
+            this.btn_delete.Style = Sunny.UI.UIStyle.Red;
+            this.btn_delete.TabIndex = 3;
+            this.btn_delete.Text = "刪除";
+            this.btn_delete.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_reload
             // 
@@ -177,7 +181,7 @@
             this.btn_reload.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(109)))));
             this.btn_reload.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(109)))));
             this.btn_reload.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_reload.Location = new System.Drawing.Point(725, 245);
+            this.btn_reload.Location = new System.Drawing.Point(725, 256);
             this.btn_reload.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_reload.Name = "btn_reload";
             this.btn_reload.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -193,6 +197,7 @@
             // 
             // uiGroupBox1
             // 
+            this.uiGroupBox1.Controls.Add(this.btn_clear);
             this.uiGroupBox1.Controls.Add(this.btn_search);
             this.uiGroupBox1.Controls.Add(this.cmb_title);
             this.uiGroupBox1.Controls.Add(this.cmb_team);
@@ -210,26 +215,54 @@
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.uiGroupBox1.Size = new System.Drawing.Size(800, 86);
+            this.uiGroupBox1.Size = new System.Drawing.Size(800, 97);
             this.uiGroupBox1.Style = Sunny.UI.UIStyle.Orange;
             this.uiGroupBox1.TabIndex = 5;
             this.uiGroupBox1.Text = "搜尋";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiGroupBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.Transparent;
+            this.btn_clear.CircleRectWidth = 2;
+            this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_clear.FillColor = System.Drawing.Color.Transparent;
+            this.btn_clear.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_clear.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_clear.IsCircle = true;
+            this.btn_clear.Location = new System.Drawing.Point(746, 60);
+            this.btn_clear.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.RectColor = System.Drawing.Color.DarkGray;
+            this.btn_clear.Size = new System.Drawing.Size(42, 33);
+            this.btn_clear.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_clear.StyleCustomMode = true;
+            this.btn_clear.Symbol = 362189;
+            this.btn_clear.SymbolColor = System.Drawing.Color.Red;
+            this.btn_clear.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btn_clear.SymbolOffset = new System.Drawing.Point(2, 2);
+            this.btn_clear.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.btn_clear.SymbolSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(131)))), ((int)(((byte)(229)))));
+            this.btn_clear.TabIndex = 87;
+            this.btn_clear.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_clear.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // btn_search
             // 
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
             this.btn_search.CircleRectWidth = 2;
             this.btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_search.FillColor = System.Drawing.Color.Transparent;
             this.btn_search.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_search.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.btn_search.IsCircle = true;
-            this.btn_search.Location = new System.Drawing.Point(751, 33);
+            this.btn_search.Location = new System.Drawing.Point(746, 22);
             this.btn_search.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_search.Name = "btn_search";
             this.btn_search.RectColor = System.Drawing.Color.DarkGray;
-            this.btn_search.Size = new System.Drawing.Size(35, 35);
+            this.btn_search.Size = new System.Drawing.Size(42, 33);
             this.btn_search.Style = Sunny.UI.UIStyle.Custom;
             this.btn_search.StyleCustomMode = true;
             this.btn_search.Symbol = 61442;
@@ -257,10 +290,11 @@
             "視察",
             "組長",
             "課長",
-            "承辦"});
+            "承辦",
+            "秘書"});
             this.cmb_title.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
             this.cmb_title.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cmb_title.Location = new System.Drawing.Point(648, 37);
+            this.cmb_title.Location = new System.Drawing.Point(648, 45);
             this.cmb_title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmb_title.MinimumSize = new System.Drawing.Size(63, 0);
             this.cmb_title.Name = "cmb_title";
@@ -291,7 +325,7 @@
             "10管理組"});
             this.cmb_team.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
             this.cmb_team.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cmb_team.Location = new System.Drawing.Point(549, 37);
+            this.cmb_team.Location = new System.Drawing.Point(549, 45);
             this.cmb_team.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmb_team.MinimumSize = new System.Drawing.Size(63, 0);
             this.cmb_team.Name = "cmb_team";
@@ -317,7 +351,7 @@
             this.txt_extension.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_extension.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.txt_extension.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txt_extension.Location = new System.Drawing.Point(457, 37);
+            this.txt_extension.Location = new System.Drawing.Point(457, 45);
             this.txt_extension.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_extension.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt_extension.Name = "txt_extension";
@@ -345,7 +379,7 @@
             this.txt_ip.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_ip.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.txt_ip.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txt_ip.Location = new System.Drawing.Point(346, 37);
+            this.txt_ip.Location = new System.Drawing.Point(346, 45);
             this.txt_ip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_ip.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt_ip.Name = "txt_ip";
@@ -373,7 +407,7 @@
             this.txt_pcid.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_pcid.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.txt_pcid.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txt_pcid.Location = new System.Drawing.Point(235, 37);
+            this.txt_pcid.Location = new System.Drawing.Point(235, 45);
             this.txt_pcid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_pcid.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt_pcid.Name = "txt_pcid";
@@ -401,7 +435,7 @@
             this.txt_name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_name.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.txt_name.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txt_name.Location = new System.Drawing.Point(124, 37);
+            this.txt_name.Location = new System.Drawing.Point(124, 45);
             this.txt_name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_name.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt_name.Name = "txt_name";
@@ -429,7 +463,7 @@
             this.txt_id.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_id.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.txt_id.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txt_id.Location = new System.Drawing.Point(13, 37);
+            this.txt_id.Location = new System.Drawing.Point(13, 45);
             this.txt_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_id.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt_id.Name = "txt_id";
@@ -444,19 +478,19 @@
             this.txt_id.Watermark = "姓名代號";
             this.txt_id.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // Employees
+            // EmployeesF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 507);
             this.Controls.Add(this.uiGroupBox1);
             this.Controls.Add(this.btn_reload);
-            this.Controls.Add(this.btn_dalete);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dgv_employee);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Employees";
+            this.Name = "EmployeesF";
             this.Text = "Employees";
             this.Load += new System.EventHandler(this.Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_employee)).EndInit();
@@ -470,7 +504,7 @@
         private Sunny.UI.UIDataGridView dgv_employee;
         private Sunny.UI.UIButton btn_add;
         private Sunny.UI.UIButton btn_update;
-        private Sunny.UI.UIButton btn_dalete;
+        private Sunny.UI.UIButton btn_delete;
         private Sunny.UI.UIButton btn_reload;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox txt_pcid;
@@ -481,5 +515,6 @@
         private Sunny.UI.UITextBox txt_extension;
         private Sunny.UI.UITextBox txt_ip;
         private Sunny.UI.UISymbolButton btn_search;
+        private Sunny.UI.UISymbolButton btn_clear;
     }
 }

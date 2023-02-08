@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -32,7 +33,9 @@ namespace Sys01510
 
         private void hbtn_database_Click(object sender, EventArgs e)
         {
-
+            Process DbOpener = new Process();
+            DbOpener.StartInfo.FileName = $@"{Application.StartupPath}/mis.db";
+            DbOpener.Start();
         }
 
         private void hbtn_test_Click(object sender, EventArgs e)
@@ -41,7 +44,7 @@ namespace Sys01510
             _employee _Employee = new _employee();
             var data = excel.ReadExcel(@"D:\478646資料檔\Desktop\電腦清單(20221213).xlsx");
             string insertString = "";
-            if (_Sqlite.EmployeeDataAdd(_path.db, "employees", _sql_header.Employee, data, insertString))
+            if (_Sqlite.EmployeeDataAdd(_path.db, _path.db_employee, _sql_header.Employee, data))
             {
                 Console.WriteLine("Finish");
             }
@@ -53,7 +56,7 @@ namespace Sys01510
 
         private void hbtn_employees_Click(object sender, EventArgs e)
         {
-            Employees employees = new Employees();
+            EmployeesF employees = new EmployeesF();
             employees.Show();
         }
     }
