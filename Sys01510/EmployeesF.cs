@@ -137,25 +137,13 @@ namespace Sys01510
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            //List<_employee> data = new List<_employee>();
-
-            //for (int rows = 0; rows < dgv_employee.Rows.Count - 1; rows++)
-            //{
-            //    _employee temp = new _employee();
-            //    temp.Id = Convert.ToInt32(dgv_employee.Rows[rows].Cells[0].Value.ToString());
-            //    temp.Name = dgv_employee.Rows[rows].Cells[1].Value.ToString();
-            //    temp.Team = dgv_employee.Rows[rows].Cells[2].Value.ToString();
-            //    temp.Title = dgv_employee.Rows[rows].Cells[3].Value.ToString();
-            //    temp.PCId = dgv_employee.Rows[rows].Cells[4].Value.ToString();
-            //    temp.Ip = dgv_employee.Rows[rows].Cells[5].Value.ToString();
-            //    temp.Extension = dgv_employee.Rows[rows].Cells[6].Value.ToString(); ;
-            //    data.Add(temp);
-            //}
             var id = Convert.ToInt32(dgv_employee.Rows[dgv_employee.SelectedIndex].Cells[0].Value);
             var query = (from c in db.Employees where c.Id == id select c).FirstOrDefault();
 
             editempF editempF = new editempF(query);
             editempF.ShowDialog();
+
+            GetEmpAll();
         }
     }
 }

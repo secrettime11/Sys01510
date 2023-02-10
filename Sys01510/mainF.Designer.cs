@@ -209,7 +209,7 @@
             this.hbtn_calendar.Text = "行事曆";
             this.hbtn_calendar.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.hbtn_calendar.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.hbtn_calendar.Click += new System.EventHandler(this.uiHeaderButton6_Click);
+            this.hbtn_calendar.Click += new System.EventHandler(this.hbtn_calendar_Click);
             // 
             // hbtn_employees
             // 
@@ -427,6 +427,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "01510 v1.0.0";
             this.panel_strip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

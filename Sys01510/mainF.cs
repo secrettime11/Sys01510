@@ -26,10 +26,6 @@ namespace Sys01510
                 _Sqlite.CreateDatabase(_path.db);
         }
 
-        private void uiHeaderButton6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void hbtn_database_Click(object sender, EventArgs e)
         {
@@ -43,21 +39,21 @@ namespace Sys01510
             _excel excel = new _excel();
             _employee _Employee = new _employee();
             var data = excel.ReadExcel(@"D:\478646資料檔\Desktop\電腦清單(20221213).xlsx");
-            string insertString = "";
             if (_Sqlite.EmployeeDataAdd(_path.db, _path.db_employee, _sql_header.Employee, data))
-            {
                 Console.WriteLine("Finish");
-            }
             else
-            {
                 Console.WriteLine("False");
-            }
         }
 
         private void hbtn_employees_Click(object sender, EventArgs e)
         {
             EmployeesF employees = new EmployeesF();
             employees.Show();
+        }
+
+        private void hbtn_calendar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

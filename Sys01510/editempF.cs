@@ -15,6 +15,7 @@ namespace Sys01510
     public partial class editempF : Form
     {
         Employee empData;
+        int id_; 
         public editempF(Employee _Employee)
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace Sys01510
             txt_ip.Text = empData.Ip;
             cmb_team.Text = empData.Team;
             cmb_title.Text = empData.Title;
+
+            id_ = Convert.ToInt32(empData.Id);
         }
 
         private void editempF_Load(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace Sys01510
             employee.Ip = ip;
             employee.Extension = extension;
 
-            if (_Sqlite.EmployeeDataUpdate(_path.db, "employees", _sql_header.Employee, employee))
+            if (_Sqlite.EmployeeDataUpdate(_path.db, "employees", _sql_header.Employee, employee,id_))
             {
                 MessageBox.Show("修改成功", "提醒", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();

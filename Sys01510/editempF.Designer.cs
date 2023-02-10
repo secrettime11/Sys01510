@@ -59,7 +59,7 @@
             this.txt_pcid.Padding = new System.Windows.Forms.Padding(5);
             this.txt_pcid.ShowText = false;
             this.txt_pcid.Size = new System.Drawing.Size(170, 29);
-            this.txt_pcid.TabIndex = 41;
+            this.txt_pcid.TabIndex = 4;
             this.txt_pcid.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txt_pcid.Watermark = "";
             this.txt_pcid.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -84,7 +84,7 @@
             this.cmb_team.Name = "cmb_team";
             this.cmb_team.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cmb_team.Size = new System.Drawing.Size(170, 29);
-            this.cmb_team.TabIndex = 38;
+            this.cmb_team.TabIndex = 2;
             this.cmb_team.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmb_team.Watermark = "";
             this.cmb_team.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -101,7 +101,7 @@
             this.txt_id.Padding = new System.Windows.Forms.Padding(5);
             this.txt_id.ShowText = false;
             this.txt_id.Size = new System.Drawing.Size(170, 29);
-            this.txt_id.TabIndex = 35;
+            this.txt_id.TabIndex = 1;
             this.txt_id.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txt_id.Watermark = "";
             this.txt_id.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -125,7 +125,7 @@
             this.btn_cancel.Size = new System.Drawing.Size(100, 35);
             this.btn_cancel.Style = Sunny.UI.UIStyle.Red;
             this.btn_cancel.Symbol = 61453;
-            this.btn_cancel.TabIndex = 50;
+            this.btn_cancel.TabIndex = 8;
             this.btn_cancel.Text = "取消";
             this.btn_cancel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
@@ -137,7 +137,7 @@
             this.btn_ok.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(100, 35);
-            this.btn_ok.TabIndex = 49;
+            this.btn_ok.TabIndex = 7;
             this.btn_ok.Text = "確定";
             this.btn_ok.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
@@ -166,7 +166,7 @@
             this.txt_extension.Padding = new System.Windows.Forms.Padding(5);
             this.txt_extension.ShowText = false;
             this.txt_extension.Size = new System.Drawing.Size(170, 29);
-            this.txt_extension.TabIndex = 46;
+            this.txt_extension.TabIndex = 6;
             this.txt_extension.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txt_extension.Watermark = "";
             this.txt_extension.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -194,7 +194,7 @@
             this.txt_ip.Padding = new System.Windows.Forms.Padding(5);
             this.txt_ip.ShowText = false;
             this.txt_ip.Size = new System.Drawing.Size(170, 29);
-            this.txt_ip.TabIndex = 39;
+            this.txt_ip.TabIndex = 5;
             this.txt_ip.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txt_ip.Watermark = "";
             this.txt_ip.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -255,7 +255,7 @@
             this.cmb_title.Name = "cmb_title";
             this.cmb_title.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.cmb_title.Size = new System.Drawing.Size(170, 29);
-            this.cmb_title.TabIndex = 36;
+            this.cmb_title.TabIndex = 3;
             this.cmb_title.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmb_title.Watermark = "";
             this.cmb_title.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -296,7 +296,7 @@
             this.txt_name.Padding = new System.Windows.Forms.Padding(5);
             this.txt_name.ShowText = false;
             this.txt_name.Size = new System.Drawing.Size(170, 29);
-            this.txt_name.TabIndex = 34;
+            this.txt_name.TabIndex = 0;
             this.txt_name.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txt_name.Watermark = "";
             this.txt_name.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);

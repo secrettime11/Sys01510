@@ -58,7 +58,7 @@ namespace Sys01510.Model
         /// <summary>新增\修改\刪除資料</summary>
         /// <param name="database">資料庫名稱</param>
         /// <param name="sqlManipulate">資料操作的 SQL 語句</param>
-        public void Manipulate(string database, string sqlManipulate)
+        public bool Manipulate(string database, string sqlManipulate)
         {
             using (SQLiteConnection connection = new SQLiteConnection(GetConnectString()))
             {
@@ -70,11 +70,13 @@ namespace Sys01510.Model
                     command.Transaction = mySqlTransaction;
                     command.ExecuteNonQuery();
                     mySqlTransaction.Commit();
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                     mySqlTransaction.Rollback();
+                    return false;
                 }
                 ConShutdown(connection);
             }
@@ -208,38 +210,30 @@ namespace Sys01510.Model
             int data_counter = 0;
 
             // Final string send to SQL
-            try
-            {
-                //counter = 1;
 
-                insertString += $@"INSERT INTO {tableName} (";
-                foreach (var header in header_)
-                {
-                    // Last column
-                    if (counter == header_count)
-                        insertString += $"{header})";
-                    else
-                        insertString += $"{header}, ";
-                    counter++;
-                }
-                insertString += $" VALUES ";
-                foreach (var item in data_)
-                {
-                    if (data_counter == data_.Count() - 1)
-                        insertString += $"('{item.Id}','{item.Name}','{item.Team}','{item.Title}','{item.PCId}','{item.Ip}','{item.Extension}');" + Environment.NewLine;
-                    else
-                        insertString += $"('{item.Id}','{item.Name}','{item.Team}','{item.Title}','{item.PCId}','{item.Ip}','{item.Extension}'),";
-                    data_counter++;
-                }
-                Console.WriteLine(insertString);
-                // Insert into datatable
-                Manipulate(database, insertString);
-                return true;
-            }
-            catch (Exception)
+            insertString += $@"INSERT INTO {tableName} (";
+            foreach (var header in header_)
             {
-                return false;
+                // Last column
+                if (counter == header_count)
+                    insertString += $"{header})";
+                else
+                    insertString += $"{header}, ";
+                counter++;
             }
+            insertString += $" VALUES ";
+            foreach (var item in data_)
+            {
+                if (data_counter == data_.Count() - 1)
+                    insertString += $"('{item.Id}','{item.Name}','{item.Team}','{item.Title}','{item.PCId}','{item.Ip}','{item.Extension}');" + Environment.NewLine;
+                else
+                    insertString += $"('{item.Id}','{item.Name}','{item.Team}','{item.Title}','{item.PCId}','{item.Ip}','{item.Extension}'),";
+                data_counter++;
+            }
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
 
         }
         public bool EmployeeDataDelete(string database, string tableName, string idList)
@@ -247,34 +241,22 @@ namespace Sys01510.Model
             string insertString = String.Empty;
 
             // Final string send to SQL
-            try
-            {
-                insertString += $@"DELETE FROM {tableName} WHERE ID IN({idList})";
-                Manipulate(database, insertString);
+            insertString += $@"DELETE FROM {tableName} WHERE ID IN({idList})";
+            if (Manipulate(database, insertString))
                 return true;
-            }
-            catch (Exception)
-            {
+            else
                 return false;
-            }
-
         }
 
-        public bool EmployeeDataUpdate(string database, string tableName, List<string> header_, _employee data_)
+        public bool EmployeeDataUpdate(string database, string tableName, List<string> header_, _employee data_, int id_)
         {
             string insertString = String.Empty;
-
             // Final string send to SQL
-            try
-            {
-                insertString += $@"UPDATE {tableName} SET Id={data_.Id},Name={data_.Name},Team={data_.Team},Title={data_.Title},PCId={data_.PCId},Ip={data_.Ip},Extension={data_.Extension} WHERE Id == {data_.Id}";
-                Manipulate(database, insertString);
+            insertString += $@"UPDATE {tableName} SET Id={data_.Id},Name='{data_.Name}',Team='{data_.Team}',Title='{data_.Title}',PCId='{data_.PCId}',Ip='{data_.Ip}',Extension='{data_.Extension}' WHERE Id = {id_}";
+            if (Manipulate(database, insertString))
                 return true;
-            }
-            catch (Exception)
-            {
+            else
                 return false;
-            }
         }
         public string CreateTableString(string tableName, List<string> header_)
         {
