@@ -198,6 +198,7 @@
     <None Include="img\employees.png" />
     <None Include="img\logo.png" />
     <None Include="img\test.png" />
+    <None Include="img\info.png" />
     <Content Include="LinqToDB.Templates\CopyMe.SQLite.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CopyMe.SQLite1.generated.cs</LastGenOutput>

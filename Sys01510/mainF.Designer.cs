@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainF));
             this.panel_strip = new Sunny.UI.UIPanel();
-            this.hbtn_test = new Sunny.UI.UIHeaderButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.hbtn_database = new Sunny.UI.UIHeaderButton();
-            this.hbtn_setting = new Sunny.UI.UIHeaderButton();
-            this.hbtn_calendar = new Sunny.UI.UIHeaderButton();
-            this.hbtn_employees = new Sunny.UI.UIHeaderButton();
             this.panel_context = new Sunny.UI.UIPanel();
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -52,14 +46,22 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.btn_info = new Sunny.UI.UIHeaderButton();
+            this.hbtn_test = new Sunny.UI.UIHeaderButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hbtn_database = new Sunny.UI.UIHeaderButton();
+            this.hbtn_setting = new Sunny.UI.UIHeaderButton();
+            this.hbtn_calendar = new Sunny.UI.UIHeaderButton();
+            this.hbtn_employees = new Sunny.UI.UIHeaderButton();
             this.panel_strip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_context.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_strip
             // 
+            this.panel_strip.Controls.Add(this.btn_info);
             this.panel_strip.Controls.Add(this.hbtn_test);
             this.panel_strip.Controls.Add(this.pictureBox1);
             this.panel_strip.Controls.Add(this.hbtn_database);
@@ -81,165 +83,6 @@
             this.panel_strip.Text = null;
             this.panel_strip.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.panel_strip.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // hbtn_test
-            // 
-            this.hbtn_test.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hbtn_test.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.hbtn_test.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.hbtn_test.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_test.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_test.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.hbtn_test.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_test.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_test.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_test.Image = global::Sys01510.Properties.Resources.test;
-            this.hbtn_test.ImageTop = 5;
-            this.hbtn_test.Location = new System.Drawing.Point(414, 3);
-            this.hbtn_test.MinimumSize = new System.Drawing.Size(1, 1);
-            this.hbtn_test.Name = "hbtn_test";
-            this.hbtn_test.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
-            this.hbtn_test.Radius = 0;
-            this.hbtn_test.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.hbtn_test.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.hbtn_test.Size = new System.Drawing.Size(100, 85);
-            this.hbtn_test.Style = Sunny.UI.UIStyle.Custom;
-            this.hbtn_test.StyleCustomMode = true;
-            this.hbtn_test.Symbol = 0;
-            this.hbtn_test.TabIndex = 15;
-            this.hbtn_test.Text = "測試";
-            this.hbtn_test.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hbtn_test.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.hbtn_test.Click += new System.EventHandler(this.hbtn_test_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Sys01510.Properties.Resources.logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 87);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // hbtn_database
-            // 
-            this.hbtn_database.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hbtn_database.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.hbtn_database.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.hbtn_database.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_database.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_database.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.hbtn_database.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_database.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_database.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_database.Image = global::Sys01510.Properties.Resources.database;
-            this.hbtn_database.ImageTop = 5;
-            this.hbtn_database.Location = new System.Drawing.Point(732, 3);
-            this.hbtn_database.MinimumSize = new System.Drawing.Size(1, 1);
-            this.hbtn_database.Name = "hbtn_database";
-            this.hbtn_database.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
-            this.hbtn_database.Radius = 0;
-            this.hbtn_database.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.hbtn_database.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.hbtn_database.Size = new System.Drawing.Size(100, 85);
-            this.hbtn_database.Style = Sunny.UI.UIStyle.Custom;
-            this.hbtn_database.StyleCustomMode = true;
-            this.hbtn_database.Symbol = 0;
-            this.hbtn_database.TabIndex = 13;
-            this.hbtn_database.Text = "資料庫";
-            this.hbtn_database.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hbtn_database.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.hbtn_database.Click += new System.EventHandler(this.hbtn_database_Click);
-            // 
-            // hbtn_setting
-            // 
-            this.hbtn_setting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hbtn_setting.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.hbtn_setting.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.hbtn_setting.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_setting.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_setting.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.hbtn_setting.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_setting.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_setting.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_setting.Image = global::Sys01510.Properties.Resources.setting;
-            this.hbtn_setting.ImageTop = 5;
-            this.hbtn_setting.Location = new System.Drawing.Point(838, 3);
-            this.hbtn_setting.MinimumSize = new System.Drawing.Size(1, 1);
-            this.hbtn_setting.Name = "hbtn_setting";
-            this.hbtn_setting.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
-            this.hbtn_setting.Radius = 0;
-            this.hbtn_setting.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.hbtn_setting.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.hbtn_setting.Size = new System.Drawing.Size(100, 85);
-            this.hbtn_setting.Style = Sunny.UI.UIStyle.Custom;
-            this.hbtn_setting.StyleCustomMode = true;
-            this.hbtn_setting.Symbol = 0;
-            this.hbtn_setting.TabIndex = 12;
-            this.hbtn_setting.Text = "設置";
-            this.hbtn_setting.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hbtn_setting.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // hbtn_calendar
-            // 
-            this.hbtn_calendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hbtn_calendar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.hbtn_calendar.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.hbtn_calendar.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_calendar.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_calendar.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.hbtn_calendar.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_calendar.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_calendar.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_calendar.Image = global::Sys01510.Properties.Resources.calendar;
-            this.hbtn_calendar.ImageTop = 5;
-            this.hbtn_calendar.Location = new System.Drawing.Point(626, 3);
-            this.hbtn_calendar.MinimumSize = new System.Drawing.Size(1, 1);
-            this.hbtn_calendar.Name = "hbtn_calendar";
-            this.hbtn_calendar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
-            this.hbtn_calendar.Radius = 0;
-            this.hbtn_calendar.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.hbtn_calendar.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.hbtn_calendar.Size = new System.Drawing.Size(100, 85);
-            this.hbtn_calendar.Style = Sunny.UI.UIStyle.Custom;
-            this.hbtn_calendar.StyleCustomMode = true;
-            this.hbtn_calendar.Symbol = 0;
-            this.hbtn_calendar.TabIndex = 11;
-            this.hbtn_calendar.Text = "行事曆";
-            this.hbtn_calendar.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hbtn_calendar.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.hbtn_calendar.Click += new System.EventHandler(this.hbtn_calendar_Click);
-            // 
-            // hbtn_employees
-            // 
-            this.hbtn_employees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hbtn_employees.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.hbtn_employees.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.hbtn_employees.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_employees.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.hbtn_employees.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.hbtn_employees.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_employees.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_employees.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.hbtn_employees.Image = global::Sys01510.Properties.Resources.employees;
-            this.hbtn_employees.ImageTop = 5;
-            this.hbtn_employees.Location = new System.Drawing.Point(520, 3);
-            this.hbtn_employees.MinimumSize = new System.Drawing.Size(1, 1);
-            this.hbtn_employees.Name = "hbtn_employees";
-            this.hbtn_employees.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
-            this.hbtn_employees.Radius = 0;
-            this.hbtn_employees.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.hbtn_employees.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.hbtn_employees.Size = new System.Drawing.Size(100, 85);
-            this.hbtn_employees.Style = Sunny.UI.UIStyle.Custom;
-            this.hbtn_employees.StyleCustomMode = true;
-            this.hbtn_employees.Symbol = 0;
-            this.hbtn_employees.TabIndex = 6;
-            this.hbtn_employees.Text = "人員清冊";
-            this.hbtn_employees.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hbtn_employees.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.hbtn_employees.Click += new System.EventHandler(this.hbtn_employees_Click);
             // 
             // panel_context
             // 
@@ -417,6 +260,195 @@
             this.tabPage14.Text = "個人資料現況查核";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
+            // btn_info
+            // 
+            this.btn_info.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_info.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_info.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_info.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btn_info.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btn_info.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_info.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btn_info.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btn_info.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btn_info.Image = global::Sys01510.Properties.Resources.info;
+            this.btn_info.ImageTop = 5;
+            this.btn_info.Location = new System.Drawing.Point(414, 3);
+            this.btn_info.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.btn_info.Radius = 0;
+            this.btn_info.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btn_info.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btn_info.Size = new System.Drawing.Size(100, 85);
+            this.btn_info.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_info.StyleCustomMode = true;
+            this.btn_info.Symbol = 0;
+            this.btn_info.TabIndex = 16;
+            this.btn_info.Text = "帳號 / 資料";
+            this.btn_info.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_info.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
+            // 
+            // hbtn_test
+            // 
+            this.hbtn_test.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hbtn_test.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.hbtn_test.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.hbtn_test.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_test.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_test.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.hbtn_test.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_test.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_test.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_test.Image = global::Sys01510.Properties.Resources.test;
+            this.hbtn_test.ImageTop = 5;
+            this.hbtn_test.Location = new System.Drawing.Point(308, 3);
+            this.hbtn_test.MinimumSize = new System.Drawing.Size(1, 1);
+            this.hbtn_test.Name = "hbtn_test";
+            this.hbtn_test.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.hbtn_test.Radius = 0;
+            this.hbtn_test.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.hbtn_test.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.hbtn_test.Size = new System.Drawing.Size(100, 85);
+            this.hbtn_test.Style = Sunny.UI.UIStyle.Custom;
+            this.hbtn_test.StyleCustomMode = true;
+            this.hbtn_test.Symbol = 0;
+            this.hbtn_test.TabIndex = 15;
+            this.hbtn_test.Text = "測試";
+            this.hbtn_test.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hbtn_test.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.hbtn_test.Click += new System.EventHandler(this.hbtn_test_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Sys01510.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 87);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // hbtn_database
+            // 
+            this.hbtn_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hbtn_database.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.hbtn_database.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.hbtn_database.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_database.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_database.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.hbtn_database.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_database.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_database.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_database.Image = global::Sys01510.Properties.Resources.database;
+            this.hbtn_database.ImageTop = 5;
+            this.hbtn_database.Location = new System.Drawing.Point(732, 3);
+            this.hbtn_database.MinimumSize = new System.Drawing.Size(1, 1);
+            this.hbtn_database.Name = "hbtn_database";
+            this.hbtn_database.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.hbtn_database.Radius = 0;
+            this.hbtn_database.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.hbtn_database.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.hbtn_database.Size = new System.Drawing.Size(100, 85);
+            this.hbtn_database.Style = Sunny.UI.UIStyle.Custom;
+            this.hbtn_database.StyleCustomMode = true;
+            this.hbtn_database.Symbol = 0;
+            this.hbtn_database.TabIndex = 13;
+            this.hbtn_database.Text = "資料庫";
+            this.hbtn_database.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hbtn_database.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.hbtn_database.Click += new System.EventHandler(this.hbtn_database_Click);
+            // 
+            // hbtn_setting
+            // 
+            this.hbtn_setting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hbtn_setting.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.hbtn_setting.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.hbtn_setting.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_setting.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_setting.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.hbtn_setting.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_setting.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_setting.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_setting.Image = global::Sys01510.Properties.Resources.setting;
+            this.hbtn_setting.ImageTop = 5;
+            this.hbtn_setting.Location = new System.Drawing.Point(838, 3);
+            this.hbtn_setting.MinimumSize = new System.Drawing.Size(1, 1);
+            this.hbtn_setting.Name = "hbtn_setting";
+            this.hbtn_setting.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.hbtn_setting.Radius = 0;
+            this.hbtn_setting.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.hbtn_setting.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.hbtn_setting.Size = new System.Drawing.Size(100, 85);
+            this.hbtn_setting.Style = Sunny.UI.UIStyle.Custom;
+            this.hbtn_setting.StyleCustomMode = true;
+            this.hbtn_setting.Symbol = 0;
+            this.hbtn_setting.TabIndex = 12;
+            this.hbtn_setting.Text = "設置";
+            this.hbtn_setting.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hbtn_setting.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // hbtn_calendar
+            // 
+            this.hbtn_calendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hbtn_calendar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.hbtn_calendar.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.hbtn_calendar.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_calendar.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_calendar.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.hbtn_calendar.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_calendar.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_calendar.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_calendar.Image = global::Sys01510.Properties.Resources.calendar;
+            this.hbtn_calendar.ImageTop = 5;
+            this.hbtn_calendar.Location = new System.Drawing.Point(626, 3);
+            this.hbtn_calendar.MinimumSize = new System.Drawing.Size(1, 1);
+            this.hbtn_calendar.Name = "hbtn_calendar";
+            this.hbtn_calendar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.hbtn_calendar.Radius = 0;
+            this.hbtn_calendar.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.hbtn_calendar.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.hbtn_calendar.Size = new System.Drawing.Size(100, 85);
+            this.hbtn_calendar.Style = Sunny.UI.UIStyle.Custom;
+            this.hbtn_calendar.StyleCustomMode = true;
+            this.hbtn_calendar.Symbol = 0;
+            this.hbtn_calendar.TabIndex = 11;
+            this.hbtn_calendar.Text = "行事曆";
+            this.hbtn_calendar.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hbtn_calendar.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.hbtn_calendar.Click += new System.EventHandler(this.hbtn_calendar_Click);
+            // 
+            // hbtn_employees
+            // 
+            this.hbtn_employees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hbtn_employees.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.hbtn_employees.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.hbtn_employees.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_employees.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hbtn_employees.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.hbtn_employees.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_employees.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_employees.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.hbtn_employees.Image = global::Sys01510.Properties.Resources.employees;
+            this.hbtn_employees.ImageTop = 5;
+            this.hbtn_employees.Location = new System.Drawing.Point(520, 3);
+            this.hbtn_employees.MinimumSize = new System.Drawing.Size(1, 1);
+            this.hbtn_employees.Name = "hbtn_employees";
+            this.hbtn_employees.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            this.hbtn_employees.Radius = 0;
+            this.hbtn_employees.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.hbtn_employees.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.hbtn_employees.Size = new System.Drawing.Size(100, 85);
+            this.hbtn_employees.Style = Sunny.UI.UIStyle.Custom;
+            this.hbtn_employees.StyleCustomMode = true;
+            this.hbtn_employees.Symbol = 0;
+            this.hbtn_employees.TabIndex = 6;
+            this.hbtn_employees.Text = "人員清冊";
+            this.hbtn_employees.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hbtn_employees.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.hbtn_employees.Click += new System.EventHandler(this.hbtn_employees_Click);
+            // 
             // mainF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -430,9 +462,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "01510 v1.0.0";
             this.panel_strip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_context.ResumeLayout(false);
             this.uiTabControlMenu1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,6 +494,7 @@
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.TabPage tabPage14;
         private Sunny.UI.UIHeaderButton hbtn_test;
+        private Sunny.UI.UIHeaderButton btn_info;
     }
 }
 

@@ -55,5 +55,10 @@ namespace Sys01510
         {
             
         }
+
+        private void btn_info_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
