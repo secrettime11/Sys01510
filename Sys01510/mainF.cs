@@ -42,7 +42,7 @@ namespace Sys01510
             if (_Sqlite.EmployeeDataAdd(_path.db, _path.db_employee, _sql_header.Employee, data))
                 Console.WriteLine("Finish");
             else
-                Console.WriteLine("False");
+                Console.WriteLine("False.");
         }
 
         private void hbtn_employees_Click(object sender, EventArgs e)
