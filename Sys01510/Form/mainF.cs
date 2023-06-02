@@ -17,6 +17,7 @@ namespace Sys01510
     public partial class mainF : Form
     {
         _sqlite _Sqlite = new _sqlite();
+        TextBox[] txtObj = new TextBox[20];
         public mainF()
         {
             InitializeComponent();
@@ -36,18 +37,18 @@ namespace Sys01510
 
         private void hbtn_test_Click(object sender, EventArgs e)
         {
-            _excel excel = new _excel();
-            _employee _Employee = new _employee();
-            var data = excel.ReadExcel(@"D:\478646資料檔\Desktop\電腦清單(20221213).xlsx");
-            if (_Sqlite.EmployeeDataAdd(_path.db, _path.db_employee, _sql_header.Employee, data))
-                Console.WriteLine("Finish");
-            else
-                Console.WriteLine("False.");
+            //_excel excel = new _excel();
+            //_employee _Employee = new _employee();
+            //var data = excel.ReadExcel(@"D:\478646資料檔\Desktop\電腦清單(20221213).xlsx");
+            //if (_Sqlite.EmployeeDataAdd(_path.db, _path.db_employee, _sql_header.Employee, data))
+            //    Console.WriteLine("Finish");
+            //else
+            //    Console.WriteLine("False.");
         }
 
         private void hbtn_employees_Click(object sender, EventArgs e)
         {
-            EmployeesF employees = new EmployeesF();
+            AccountF employees = new AccountF();
             employees.Show();
         }
 

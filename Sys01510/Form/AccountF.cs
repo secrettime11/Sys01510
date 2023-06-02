@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace Sys01510
 {
-    public partial class EmployeesF : Form
+    public partial class AccountF : Form
     {
         _sqlite _Sqlite = new _sqlite();
         _func _Func = new _func();
         MisDB db = new MisDB();
-        public EmployeesF()
+        public AccountF()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -72,16 +72,45 @@ namespace Sys01510
                 });
             }
         }
-
+        /// <summary>
+        /// 取得所有員工名單
+        /// </summary>
+        private void GetServerAll()
+        {
+            using (var db = new MisDB())
+            {
+                var query =
+                    (from c in db.Employees
+                     select c).ToList();
+                List<_employee> data = new List<_employee>();
+                foreach (var item in query)
+                {
+                    _employee temp = new _employee();
+                    temp.Id = Convert.ToInt32(item.Id);
+                    temp.Name = item.Name;
+                    temp.Title = item.Title;
+                    temp.Team = item.Team;
+                    temp.PCId = item.PCId;
+                    temp.Ip = item.Ip;
+                    temp.Extension = item.Extension;
+                    data.Add(temp);
+                }
+                DataTable OutputTable = _Func.empToView(data);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    dgv_employee.DataSource = OutputTable;
+                });
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
-            var id = txt_id.Text.Trim();
-            var name = txt_name.Text.Trim();
-            var pcid = txt_pcid.Text.Trim();
-            var title = cmb_title.Text.Trim();
-            var team = cmb_team.Text.Trim();
-            var ip = txt_ip.Text.Trim();
-            var extension = txt_extension.Text.Trim();
+            var id = txt_id_e.Text.Trim();
+            var name = txt_name_e.Text.Trim();
+            var pcid = txt_pcid_e.Text.Trim();
+            var title = cmb_title_e.Text.Trim();
+            var team = cmb_team_e.Text.Trim();
+            var ip = txt_ip_e.Text.Trim();
+            var extension = txt_extension_e.Text.Trim();
 
             using (var db = new MisDB())
             {
@@ -113,12 +142,12 @@ namespace Sys01510
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            txt_id.Clear();
-            txt_ip.Clear();
-            txt_name.Clear();
-            txt_pcid.Clear();
-            cmb_team.Clear();
-            cmb_title.Clear();
+            txt_id_e.Clear();
+            txt_ip_e.Clear();
+            txt_name_e.Clear();
+            txt_pcid_e.Clear();
+            cmb_team_e.Clear();
+            cmb_title_e.Clear();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -144,6 +173,11 @@ namespace Sys01510
             editempF.ShowDialog();
 
             GetEmpAll();
+        }
+
+        private void btn_search_s_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

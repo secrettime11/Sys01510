@@ -86,53 +86,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addempF.cs">
+    <Compile Include="Form\addempF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addempF.Designer.cs">
+    <Compile Include="Form\addempF.Designer.cs">
       <DependentUpon>addempF.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\_excel.cs" />
     <Compile Include="Class\_func.cs" />
-    <Compile Include="editempF.cs">
+    <Compile Include="Form\editempF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editempF.Designer.cs">
+    <Compile Include="Form\editempF.Designer.cs">
       <DependentUpon>editempF.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeesF.cs">
+    <Compile Include="Form\AccountF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeesF.Designer.cs">
-      <DependentUpon>EmployeesF.cs</DependentUpon>
+    <Compile Include="Form\AccountF.Designer.cs">
+      <DependentUpon>AccountF.cs</DependentUpon>
     </Compile>
     <Compile Include="LinqToDB.Templates\CopyMe.SQLite1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CopyMe.SQLite.tt</DependentUpon>
     </Compile>
-    <Compile Include="mainF.cs">
+    <Compile Include="Form\mainF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainF.Designer.cs">
+    <Compile Include="Form\mainF.Designer.cs">
       <DependentUpon>mainF.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\_path.cs" />
     <Compile Include="Class\_sqlite.cs" />
     <Compile Include="Model\_employee.cs" />
+    <Compile Include="Model\_server.cs" />
     <Compile Include="Model\_sql_header.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="addempF.resx">
+    <EmbeddedResource Include="Form\addempF.resx">
       <DependentUpon>addempF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editempF.resx">
+    <EmbeddedResource Include="Form\editempF.resx">
       <DependentUpon>editempF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeesF.resx">
-      <DependentUpon>EmployeesF.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AccountF.resx">
+      <DependentUpon>AccountF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainF.resx">
+    <EmbeddedResource Include="Form\mainF.resx">
       <DependentUpon>mainF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

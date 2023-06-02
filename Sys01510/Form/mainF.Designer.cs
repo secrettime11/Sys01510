@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainF));
             this.panel_strip = new Sunny.UI.UIPanel();
+            this.btn_info = new Sunny.UI.UIHeaderButton();
+            this.hbtn_test = new Sunny.UI.UIHeaderButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hbtn_database = new Sunny.UI.UIHeaderButton();
+            this.hbtn_setting = new Sunny.UI.UIHeaderButton();
+            this.hbtn_calendar = new Sunny.UI.UIHeaderButton();
+            this.hbtn_employees = new Sunny.UI.UIHeaderButton();
             this.panel_context = new Sunny.UI.UIPanel();
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -46,17 +53,10 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.btn_info = new Sunny.UI.UIHeaderButton();
-            this.hbtn_test = new Sunny.UI.UIHeaderButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.hbtn_database = new Sunny.UI.UIHeaderButton();
-            this.hbtn_setting = new Sunny.UI.UIHeaderButton();
-            this.hbtn_calendar = new Sunny.UI.UIHeaderButton();
-            this.hbtn_employees = new Sunny.UI.UIHeaderButton();
             this.panel_strip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_context.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_strip
@@ -83,182 +83,6 @@
             this.panel_strip.Text = null;
             this.panel_strip.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.panel_strip.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // panel_context
-            // 
-            this.panel_context.Controls.Add(this.uiTabControlMenu1);
-            this.panel_context.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_context.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.panel_context.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.panel_context.Location = new System.Drawing.Point(0, 90);
-            this.panel_context.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel_context.MinimumSize = new System.Drawing.Size(1, 1);
-            this.panel_context.Name = "panel_context";
-            this.panel_context.Radius = 0;
-            this.panel_context.RectColor = System.Drawing.Color.Black;
-            this.panel_context.Size = new System.Drawing.Size(944, 591);
-            this.panel_context.Style = Sunny.UI.UIStyle.Custom;
-            this.panel_context.TabIndex = 1;
-            this.panel_context.Text = null;
-            this.panel_context.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.panel_context.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // uiTabControlMenu1
-            // 
-            this.uiTabControlMenu1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.uiTabControlMenu1.Controls.Add(this.tabPage1);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage2);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage3);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage4);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage5);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage6);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage7);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage8);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage9);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage10);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage11);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage12);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage13);
-            this.uiTabControlMenu1.Controls.Add(this.tabPage14);
-            this.uiTabControlMenu1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.uiTabControlMenu1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiTabControlMenu1.Location = new System.Drawing.Point(3, 3);
-            this.uiTabControlMenu1.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
-            this.uiTabControlMenu1.Multiline = true;
-            this.uiTabControlMenu1.Name = "uiTabControlMenu1";
-            this.uiTabControlMenu1.SelectedIndex = 0;
-            this.uiTabControlMenu1.Size = new System.Drawing.Size(938, 585);
-            this.uiTabControlMenu1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.uiTabControlMenu1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiTabControlMenu1.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.uiTabControlMenu1.TabIndex = 15;
-            this.uiTabControlMenu1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(201, 0);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(737, 585);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "軟體採購";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(201, 0);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(737, 585);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "硬體設備採購";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(201, 0);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(737, 585);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "資產盤點";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(201, 0);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(737, 585);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "碳粉匣採購";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(201, 0);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(737, 585);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "碳粉匣回收";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(201, 0);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(737, 585);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "年度預算填報";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(201, 0);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(737, 585);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "社交工程演練";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(201, 0);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(737, 585);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "軟體盤點";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Location = new System.Drawing.Point(201, 0);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(737, 585);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "P2P清查";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Location = new System.Drawing.Point(201, 0);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(737, 585);
-            this.tabPage10.TabIndex = 9;
-            this.tabPage10.Text = "機密性敏感性清查";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Location = new System.Drawing.Point(201, 0);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(737, 585);
-            this.tabPage11.TabIndex = 10;
-            this.tabPage11.Text = "風險評鑑";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Location = new System.Drawing.Point(201, 0);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(737, 585);
-            this.tabPage12.TabIndex = 11;
-            this.tabPage12.Text = "內部稽核";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Location = new System.Drawing.Point(201, 0);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(737, 585);
-            this.tabPage13.TabIndex = 12;
-            this.tabPage13.Text = "資安健診";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // tabPage14
-            // 
-            this.tabPage14.Location = new System.Drawing.Point(201, 0);
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(737, 585);
-            this.tabPage14.TabIndex = 13;
-            this.tabPage14.Text = "個人資料現況查核";
-            this.tabPage14.UseVisualStyleBackColor = true;
             // 
             // btn_info
             // 
@@ -449,6 +273,182 @@
             this.hbtn_employees.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.hbtn_employees.Click += new System.EventHandler(this.hbtn_employees_Click);
             // 
+            // panel_context
+            // 
+            this.panel_context.Controls.Add(this.uiTabControlMenu1);
+            this.panel_context.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_context.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.panel_context.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.panel_context.Location = new System.Drawing.Point(0, 90);
+            this.panel_context.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel_context.MinimumSize = new System.Drawing.Size(1, 1);
+            this.panel_context.Name = "panel_context";
+            this.panel_context.Radius = 0;
+            this.panel_context.RectColor = System.Drawing.Color.Black;
+            this.panel_context.Size = new System.Drawing.Size(944, 591);
+            this.panel_context.Style = Sunny.UI.UIStyle.Custom;
+            this.panel_context.TabIndex = 1;
+            this.panel_context.Text = null;
+            this.panel_context.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel_context.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTabControlMenu1
+            // 
+            this.uiTabControlMenu1.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.uiTabControlMenu1.Controls.Add(this.tabPage1);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage2);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage3);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage4);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage5);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage6);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage7);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage8);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage9);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage10);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage11);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage12);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage13);
+            this.uiTabControlMenu1.Controls.Add(this.tabPage14);
+            this.uiTabControlMenu1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.uiTabControlMenu1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiTabControlMenu1.Location = new System.Drawing.Point(3, 3);
+            this.uiTabControlMenu1.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
+            this.uiTabControlMenu1.Multiline = true;
+            this.uiTabControlMenu1.Name = "uiTabControlMenu1";
+            this.uiTabControlMenu1.SelectedIndex = 0;
+            this.uiTabControlMenu1.Size = new System.Drawing.Size(938, 585);
+            this.uiTabControlMenu1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.uiTabControlMenu1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTabControlMenu1.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.uiTabControlMenu1.TabIndex = 15;
+            this.uiTabControlMenu1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(201, 0);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(737, 585);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "待辦事項";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(201, 0);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(737, 585);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "硬體設備採購";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(201, 0);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(737, 585);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "資產盤點";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(201, 0);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(737, 585);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "碳粉匣採購";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(201, 0);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(737, 585);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "碳粉匣回收";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(201, 0);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(737, 585);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "年度預算填報";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(201, 0);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(737, 585);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "社交工程演練";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(201, 0);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(737, 585);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "軟體盤點";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(201, 0);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(737, 585);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "P2P清查";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(201, 0);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(737, 585);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "機密性敏感性清查";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Location = new System.Drawing.Point(201, 0);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(737, 585);
+            this.tabPage11.TabIndex = 10;
+            this.tabPage11.Text = "風險評鑑";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Location = new System.Drawing.Point(201, 0);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(737, 585);
+            this.tabPage12.TabIndex = 11;
+            this.tabPage12.Text = "內部稽核";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Location = new System.Drawing.Point(201, 0);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Size = new System.Drawing.Size(737, 585);
+            this.tabPage13.TabIndex = 12;
+            this.tabPage13.Text = "資安健診";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Location = new System.Drawing.Point(201, 0);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Size = new System.Drawing.Size(737, 585);
+            this.tabPage14.TabIndex = 13;
+            this.tabPage14.Text = "個人資料現況查核";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
             // mainF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -462,9 +462,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "01510 v1.0.0";
             this.panel_strip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_context.ResumeLayout(false);
             this.uiTabControlMenu1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
