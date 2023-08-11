@@ -86,18 +86,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\addempF.cs">
+    <Compile Include="Form\server\editserverF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\addempF.Designer.cs">
+    <Compile Include="Form\server\editserverF.Designer.cs">
+      <DependentUpon>editserverF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\server\addserverF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\server\addserverF.Designer.cs">
+      <DependentUpon>addserverF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\emp\addempF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\emp\addempF.Designer.cs">
       <DependentUpon>addempF.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\_excel.cs" />
     <Compile Include="Class\_func.cs" />
-    <Compile Include="Form\editempF.cs">
+    <Compile Include="Form\emp\editempF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\editempF.Designer.cs">
+    <Compile Include="Form\emp\editempF.Designer.cs">
       <DependentUpon>editempF.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\AccountF.cs">
@@ -105,11 +117,6 @@
     </Compile>
     <Compile Include="Form\AccountF.Designer.cs">
       <DependentUpon>AccountF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LinqToDB.Templates\CopyMe.SQLite1.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CopyMe.SQLite.tt</DependentUpon>
     </Compile>
     <Compile Include="Form\mainF.cs">
       <SubType>Form</SubType>
@@ -119,15 +126,20 @@
     </Compile>
     <Compile Include="Class\_path.cs" />
     <Compile Include="Class\_sqlite.cs" />
+    <Compile Include="LinqToDB.Templates\CopyMe.SQLite1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CopyMe.SQLite.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\_employee.cs" />
     <Compile Include="Model\_server.cs" />
     <Compile Include="Model\_sql_header.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\addempF.resx">
+    <EmbeddedResource Include="Form\emp\addempF.resx">
       <DependentUpon>addempF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\editempF.resx">
+    <EmbeddedResource Include="Form\emp\editempF.resx">
       <DependentUpon>editempF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AccountF.resx">
@@ -135,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\mainF.resx">
       <DependentUpon>mainF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\server\addserverF.resx">
+      <DependentUpon>addserverF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\server\editserverF.resx">
+      <DependentUpon>editserverF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

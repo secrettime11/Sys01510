@@ -201,6 +201,7 @@ namespace Sys01510.Model
             }
         }
 
+        #region Employee
 
         public bool EmployeeDataAdd(string database, string tableName, List<string> header_, List<_employee> data_)
         {
@@ -247,7 +248,6 @@ namespace Sys01510.Model
             else
                 return false;
         }
-
         public bool EmployeeDataUpdate(string database, string tableName, List<string> header_, _employee data_, int id_)
         {
             string insertString = String.Empty;
@@ -258,6 +258,67 @@ namespace Sys01510.Model
             else
                 return false;
         }
+        #endregion
+
+        #region Server
+        public bool ServerDataAdd(string database, string tableName, List<string> header_, List<_server> data_)
+        {
+            string insertString = String.Empty;
+            int header_count = header_.Count();
+            int counter = 1;
+            int data_counter = 0;
+
+            // Final string send to SQL
+
+            insertString += $@"INSERT INTO {tableName} (";
+            foreach (var header in header_)
+            {
+                // Last column
+                if (counter == header_count)
+                    insertString += $"{header})";
+                else
+                    insertString += $"{header}, ";
+                counter++;
+            }
+            insertString += $" VALUES ";
+            foreach (var item in data_)
+            {
+                if (data_counter == data_.Count() - 1)
+                    insertString += $"('{item.Name}','{item.Ip}','{item.Account}','{item.Password}','{item.Remark}');" + Environment.NewLine;
+                else
+                    insertString += $"('{item.Name}','{item.Ip}','{item.Account}','{item.Password}','{item.Remark}'),";
+                data_counter++;
+            }
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+
+        }
+        public bool ServerDataDelete(string database, string tableName, string ip)
+        {
+            string insertString = String.Empty;
+
+            // Final string send to SQL
+            insertString += $@"DELETE FROM {tableName} WHERE Ip= '{ip}'";
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+        }
+
+        public bool ServerDataUpdate(string database, string tableName, List<string> header_, _server data_, string Ip_)
+        {
+            string insertString = String.Empty;
+            // Final string send to SQL
+            insertString += $@"UPDATE {tableName} SET Name='{data_.Name}',Ip='{data_.Ip}',Account='{data_.Account}',Password='{data_.Password}',Remark='{data_.Remark}' WHERE Ip = '{Ip_}'";
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+        }
+        #endregion
+
         public string CreateTableString(string tableName, List<string> header_)
         {
             int header_count = header_.Count();

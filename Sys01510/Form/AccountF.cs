@@ -18,6 +18,7 @@ namespace Sys01510
         _sqlite _Sqlite = new _sqlite();
         _func _Func = new _func();
         MisDB db = new MisDB();
+        int tab_index;
         public AccountF()
         {
             InitializeComponent();
@@ -36,10 +37,22 @@ namespace Sys01510
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            addempF addempF = new addempF();
-            addempF.ShowDialog();
+            switch (tab_index)
+            {
+                case 0:
+                    addempF addempF = new addempF();
+                    addempF.ShowDialog();
+                    GetEmpAll();
+                    break;
+                case 1:
+                    addserverF addserverF = new addserverF();
+                    addserverF.ShowDialog();
+                    GetServerAll();
+                    break;
 
-            GetEmpAll();
+            }
+
+
         }
 
         /// <summary>
@@ -73,32 +86,30 @@ namespace Sys01510
             }
         }
         /// <summary>
-        /// 取得所有員工名單
+        /// 取得所有伺服器名單
         /// </summary>
         private void GetServerAll()
         {
             using (var db = new MisDB())
             {
                 var query =
-                    (from c in db.Employees
+                    (from c in db.Servers
                      select c).ToList();
-                List<_employee> data = new List<_employee>();
+                List<_server> data = new List<_server>();
                 foreach (var item in query)
                 {
-                    _employee temp = new _employee();
-                    temp.Id = Convert.ToInt32(item.Id);
-                    temp.Name = item.Name;
-                    temp.Title = item.Title;
-                    temp.Team = item.Team;
-                    temp.PCId = item.PCId;
+                    _server temp = new _server();
+                    temp.Name = item.NAME;
                     temp.Ip = item.Ip;
-                    temp.Extension = item.Extension;
+                    temp.Account = item.Account;
+                    temp.Password = item.Password;
+                    temp.Remark = item.Remark;
                     data.Add(temp);
                 }
-                DataTable OutputTable = _Func.empToView(data);
+                DataTable OutputTable = _Func.serverToView(data);
                 this.Invoke((MethodInvoker)delegate
                 {
-                    dgv_employee.DataSource = OutputTable;
+                    dgv_server.DataSource = OutputTable;
                 });
             }
         }
@@ -152,32 +163,117 @@ namespace Sys01510
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            string idList = string.Empty;
-            // 取得選取rowID
-            foreach (DataGridViewRow row in dgv_employee.SelectedRows)
+            switch (tab_index)
             {
-                idList += $"{row.Cells[0].Value},";
-            }
-            idList = idList.TrimEnd(',');
-            _Sqlite.EmployeeDataDelete(_path.db, _path.db_employee, idList);
+                case 0:
+                    string idList_emp = string.Empty;
+                    // 取得選取rowID
+                    foreach (DataGridViewRow row in dgv_employee.SelectedRows)
+                    {
+                        idList_emp += $"{row.Cells[0].Value},";
+                    }
+                    idList_emp = idList_emp.TrimEnd(',');
+                    _Sqlite.EmployeeDataDelete(_path.db, _path.db_employee, idList_emp);
 
-            GetEmpAll();
+                    GetEmpAll();
+                    break;
+                case 1:
+                    string Ip_server = string.Empty;
+                    // 取得選取rowID
+                    foreach (DataGridViewRow row in dgv_server.SelectedRows)
+                    {
+                        Ip_server += $"{row.Cells[1].Value},";
+                    }
+                    Ip_server = Ip_server.TrimEnd(',');
+                    _Sqlite.ServerDataDelete(_path.db, _path.db_server, Ip_server);
+
+                    GetServerAll();
+                    break;
+            }
+
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            var id = Convert.ToInt32(dgv_employee.Rows[dgv_employee.SelectedIndex].Cells[0].Value);
-            var query = (from c in db.Employees where c.Id == id select c).FirstOrDefault();
+            switch (tab_index)
+            {
+                case 0:
+                    var id = Convert.ToInt32(dgv_employee.Rows[dgv_employee.SelectedIndex].Cells[0].Value);
+                    var query = (from c in db.Employees where c.Id == id select c).FirstOrDefault();
 
-            editempF editempF = new editempF(query);
-            editempF.ShowDialog();
+                    editempF editempF = new editempF(query);
+                    editempF.ShowDialog();
 
-            GetEmpAll();
+                    GetEmpAll();
+                    break;
+                case 1:
+                    var ip = dgv_server.Rows[dgv_server.SelectedIndex].Cells[1].Value.ToString();
+                    var query_server = (from c in db.Servers where c.Ip == ip select c).FirstOrDefault();
+
+                    editserverF editserverF = new editserverF(query_server);
+                    editserverF.ShowDialog();
+
+                    GetServerAll();
+                    break;
+            }
+
         }
 
         private void btn_search_s_Click(object sender, EventArgs e)
         {
+            var name = txt_name_s.Text.Trim();
+            var ip = txt_ip_s.Text.Trim();
+            var account = txt_account_s.Text.Trim();
+            var password = txt_password_s.Text.Trim();
+            var remark = txt_remark_s.Text.Trim();
+            using (var db = new MisDB())
+            {
+                var query =
+                    (from c in db.Servers
+                     where c.NAME.ToString().Contains(name) && c.Ip.Contains(ip) && c.Account.Contains(account) && c.Password.Contains(password)
+                     && c.Remark.Contains(remark) 
+                     select c).ToList();
+                List<_server> data = new List<_server>();
+                foreach (var item in query)
+                {
+                    _server temp = new _server();
+                    temp.Name = item.NAME;
+                    temp.Ip = item.Ip;
+                    temp.Account = item.Account;
+                    temp.Password = item.Password;
+                    temp.Remark = item.Remark;
+                    data.Add(temp);
+                }
+                DataTable OutputTable = _Func.serverToView(data);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    dgv_server.DataSource = OutputTable;
+                });
+            }
+        }
 
+        private void uiTabControl1_Click(object sender, EventArgs e)
+        {
+            // tab_index 0(同仁) 1(伺服器) 2(其他)
+            tab_index = this.uiTabControl1.SelectedIndex;
+            switch (tab_index)
+            {
+                case 0:
+                    GetEmpAll();
+                    break;
+                case 1:
+                    GetServerAll();
+                    break;
+            }
+        }
+
+        private void btn_clear_s_Click(object sender, EventArgs e)
+        {
+            txt_name_s.Clear();
+            txt_ip_s.Clear();
+            txt_account_s.Clear();
+            txt_password_s.Clear();
+            txt_remark_s.Clear();
         }
     }
 }

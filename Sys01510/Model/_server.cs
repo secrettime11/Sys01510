@@ -8,7 +8,6 @@ namespace Sys01510.Model
 {
     public class _server
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Ip { get; set; }
         public string Account { get; set; }

@@ -20,6 +20,7 @@ namespace DataModels
 	public partial class MisDB : LinqToDB.Data.DataConnection
 	{
 		public ITable<Employee> Employees { get { return this.GetTable<Employee>(); } }
+		public ITable<Server>   Servers   { get { return this.GetTable<Server>(); } }
 
 		public MisDB()
 		{
@@ -47,12 +48,29 @@ namespace DataModels
 		[Column,        Nullable] public string Extension { get; set; } // text(max)
 	}
 
+	[Table("server")]
+	public partial class Server
+	{
+		[PrimaryKey, NotNull    ] public int    ID       { get; set; } // int
+		[Column,        Nullable] public string NAME     { get; set; } // text(max)
+		[Column,        Nullable] public string Ip       { get; set; } // text(max)
+		[Column,        Nullable] public string Account  { get; set; } // text(max)
+		[Column,        Nullable] public string Password { get; set; } // text(max)
+		[Column,        Nullable] public string Remark   { get; set; } // text(max)
+	}
+
 	public static partial class TableExtensions
 	{
 		public static Employee Find(this ITable<Employee> table, long Id)
 		{
 			return table.FirstOrDefault(t =>
 				t.Id == Id);
+		}
+
+		public static Server Find(this ITable<Server> table, int ID)
+		{
+			return table.FirstOrDefault(t =>
+				t.ID == ID);
 		}
 	}
 }
