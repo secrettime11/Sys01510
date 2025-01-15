@@ -75,9 +75,9 @@
             "01火源組",
             "04電源策劃組",
             "05水源組",
-            "06調查組",
-            "07水文組",
-            "10管理組"});
+            "10管理組",
+            "11發展組",
+            "12容量組"});
             this.cmb_team.Location = new System.Drawing.Point(118, 86);
             this.cmb_team.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmb_team.MinimumSize = new System.Drawing.Size(63, 0);

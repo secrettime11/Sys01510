@@ -40,6 +40,9 @@
             this.panel_context = new Sunny.UI.UIPanel();
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.uiTabControl1 = new Sunny.UI.UITabControl();
+            this.todo113y = new System.Windows.Forms.TabPage();
+            this.todo114y = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -53,10 +56,21 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.btn_tempremove = new Sunny.UI.UIButton();
+            this.btn_freremove = new Sunny.UI.UIButton();
+            this.btn_tempadd = new Sunny.UI.UIButton();
+            this.btn_freadd = new Sunny.UI.UIButton();
+            this.lib_temp = new Sunny.UI.UIListBox();
+            this.lib_frequent = new Sunny.UI.UIListBox();
+            this.uiSmoothLabel1 = new Sunny.UI.UISmoothLabel();
+            this.uiSmoothLabel2 = new Sunny.UI.UISmoothLabel();
             this.panel_strip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_context.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.uiTabControl1.SuspendLayout();
+            this.tabPage14.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_strip
@@ -325,12 +339,49 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.uiTabControl1);
             this.tabPage1.Location = new System.Drawing.Point(201, 0);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(737, 585);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "待辦事項";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // uiTabControl1
+            // 
+            this.uiTabControl1.Controls.Add(this.todo113y);
+            this.uiTabControl1.Controls.Add(this.todo114y);
+            this.uiTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.uiTabControl1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiTabControl1.Frame = null;
+            this.uiTabControl1.ItemSize = new System.Drawing.Size(150, 40);
+            this.uiTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.uiTabControl1.MainPage = "";
+            this.uiTabControl1.Name = "uiTabControl1";
+            this.uiTabControl1.SelectedIndex = 0;
+            this.uiTabControl1.Size = new System.Drawing.Size(737, 582);
+            this.uiTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.uiTabControl1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTabControl1.TabIndex = 0;
+            this.uiTabControl1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // todo113y
+            // 
+            this.todo113y.Location = new System.Drawing.Point(0, 40);
+            this.todo113y.Name = "todo113y";
+            this.todo113y.Size = new System.Drawing.Size(737, 542);
+            this.todo113y.TabIndex = 0;
+            this.todo113y.Text = "113年度";
+            this.todo113y.UseVisualStyleBackColor = true;
+            // 
+            // todo114y
+            // 
+            this.todo114y.Location = new System.Drawing.Point(0, 40);
+            this.todo114y.Name = "todo114y";
+            this.todo114y.Size = new System.Drawing.Size(737, 542);
+            this.todo114y.TabIndex = 1;
+            this.todo114y.Text = "114年度";
+            this.todo114y.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -442,12 +493,173 @@
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.btn_tempremove);
+            this.tabPage14.Controls.Add(this.btn_freremove);
+            this.tabPage14.Controls.Add(this.btn_tempadd);
+            this.tabPage14.Controls.Add(this.btn_freadd);
+            this.tabPage14.Controls.Add(this.lib_temp);
+            this.tabPage14.Controls.Add(this.lib_frequent);
+            this.tabPage14.Controls.Add(this.uiSmoothLabel1);
+            this.tabPage14.Controls.Add(this.uiSmoothLabel2);
             this.tabPage14.Location = new System.Drawing.Point(201, 0);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Size = new System.Drawing.Size(737, 585);
             this.tabPage14.TabIndex = 13;
-            this.tabPage14.Text = "個人資料現況查核";
+            this.tabPage14.Text = "資料夾快捷";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // btn_tempremove
+            // 
+            this.btn_tempremove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_tempremove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_tempremove.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_tempremove.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btn_tempremove.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_tempremove.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_tempremove.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_tempremove.Location = new System.Drawing.Point(614, 541);
+            this.btn_tempremove.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_tempremove.Name = "btn_tempremove";
+            this.btn_tempremove.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_tempremove.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btn_tempremove.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_tempremove.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_tempremove.Size = new System.Drawing.Size(100, 35);
+            this.btn_tempremove.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_tempremove.TabIndex = 62;
+            this.btn_tempremove.Text = "移除";
+            this.btn_tempremove.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_tempremove.Click += new System.EventHandler(this.btn_tempremove_Click);
+            // 
+            // btn_freremove
+            // 
+            this.btn_freremove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_freremove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_freremove.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_freremove.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btn_freremove.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_freremove.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_freremove.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_freremove.Location = new System.Drawing.Point(235, 541);
+            this.btn_freremove.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_freremove.Name = "btn_freremove";
+            this.btn_freremove.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btn_freremove.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.btn_freremove.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_freremove.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_freremove.Size = new System.Drawing.Size(100, 35);
+            this.btn_freremove.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_freremove.TabIndex = 61;
+            this.btn_freremove.Text = "移除";
+            this.btn_freremove.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_freremove.Click += new System.EventHandler(this.btn_freremove_Click);
+            // 
+            // btn_tempadd
+            // 
+            this.btn_tempadd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_tempadd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
+            this.btn_tempadd.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
+            this.btn_tempadd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(203)))), ((int)(((byte)(83)))));
+            this.btn_tempadd.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_tempadd.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_tempadd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_tempadd.Location = new System.Drawing.Point(404, 541);
+            this.btn_tempadd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_tempadd.Name = "btn_tempadd";
+            this.btn_tempadd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
+            this.btn_tempadd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(203)))), ((int)(((byte)(83)))));
+            this.btn_tempadd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_tempadd.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_tempadd.Size = new System.Drawing.Size(100, 35);
+            this.btn_tempadd.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_tempadd.TabIndex = 60;
+            this.btn_tempadd.Text = "新增";
+            this.btn_tempadd.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_tempadd.Click += new System.EventHandler(this.btn_tempadd_Click);
+            // 
+            // btn_freadd
+            // 
+            this.btn_freadd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_freadd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
+            this.btn_freadd.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
+            this.btn_freadd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(203)))), ((int)(((byte)(83)))));
+            this.btn_freadd.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_freadd.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_freadd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_freadd.Location = new System.Drawing.Point(25, 541);
+            this.btn_freadd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_freadd.Name = "btn_freadd";
+            this.btn_freadd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
+            this.btn_freadd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(203)))), ((int)(((byte)(83)))));
+            this.btn_freadd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_freadd.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(152)))), ((int)(((byte)(32)))));
+            this.btn_freadd.Size = new System.Drawing.Size(100, 35);
+            this.btn_freadd.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_freadd.TabIndex = 59;
+            this.btn_freadd.Text = "新增";
+            this.btn_freadd.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_freadd.Click += new System.EventHandler(this.btn_freadd_Click);
+            // 
+            // lib_temp
+            // 
+            this.lib_temp.FillColor = System.Drawing.Color.White;
+            this.lib_temp.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lib_temp.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.lib_temp.ItemSelectForeColor = System.Drawing.Color.White;
+            this.lib_temp.Location = new System.Drawing.Point(404, 95);
+            this.lib_temp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lib_temp.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lib_temp.Name = "lib_temp";
+            this.lib_temp.Padding = new System.Windows.Forms.Padding(2);
+            this.lib_temp.ShowText = false;
+            this.lib_temp.Size = new System.Drawing.Size(310, 433);
+            this.lib_temp.Style = Sunny.UI.UIStyle.Custom;
+            this.lib_temp.TabIndex = 58;
+            this.lib_temp.Text = "uiListBox2";
+            this.lib_temp.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lib_temp.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lib_temp_MouseDoubleClick);
+            // 
+            // lib_frequent
+            // 
+            this.lib_frequent.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lib_frequent.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.lib_frequent.ItemSelectForeColor = System.Drawing.Color.White;
+            this.lib_frequent.Location = new System.Drawing.Point(25, 95);
+            this.lib_frequent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lib_frequent.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lib_frequent.Name = "lib_frequent";
+            this.lib_frequent.Padding = new System.Windows.Forms.Padding(2);
+            this.lib_frequent.ShowText = false;
+            this.lib_frequent.Size = new System.Drawing.Size(310, 433);
+            this.lib_frequent.Style = Sunny.UI.UIStyle.Custom;
+            this.lib_frequent.TabIndex = 57;
+            this.lib_frequent.Text = "uiListBox1";
+            this.lib_frequent.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lib_frequent.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lib_frequent_MouseDoubleClick);
+            // 
+            // uiSmoothLabel1
+            // 
+            this.uiSmoothLabel1.Font = new System.Drawing.Font("Jokerman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSmoothLabel1.Location = new System.Drawing.Point(410, 12);
+            this.uiSmoothLabel1.Name = "uiSmoothLabel1";
+            this.uiSmoothLabel1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(172)))));
+            this.uiSmoothLabel1.Size = new System.Drawing.Size(264, 78);
+            this.uiSmoothLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSmoothLabel1.TabIndex = 56;
+            this.uiSmoothLabel1.Text = "Temp Item";
+            this.uiSmoothLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiSmoothLabel2
+            // 
+            this.uiSmoothLabel2.Font = new System.Drawing.Font("Jokerman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSmoothLabel2.Location = new System.Drawing.Point(26, 12);
+            this.uiSmoothLabel2.Name = "uiSmoothLabel2";
+            this.uiSmoothLabel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.uiSmoothLabel2.Size = new System.Drawing.Size(230, 78);
+            this.uiSmoothLabel2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSmoothLabel2.TabIndex = 55;
+            this.uiSmoothLabel2.Text = "Frequent";
+            this.uiSmoothLabel2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // mainF
             // 
@@ -461,10 +673,14 @@
             this.Name = "mainF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "01510 v1.0.0";
+            this.Load += new System.EventHandler(this.mainF_Load);
             this.panel_strip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_context.ResumeLayout(false);
             this.uiTabControlMenu1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.uiTabControl1.ResumeLayout(false);
+            this.tabPage14.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -495,6 +711,17 @@
         private System.Windows.Forms.TabPage tabPage14;
         private Sunny.UI.UIHeaderButton hbtn_test;
         private Sunny.UI.UIHeaderButton btn_info;
+        private Sunny.UI.UITabControl uiTabControl1;
+        private System.Windows.Forms.TabPage todo113y;
+        private System.Windows.Forms.TabPage todo114y;
+        private Sunny.UI.UISmoothLabel uiSmoothLabel2;
+        private Sunny.UI.UIButton btn_tempremove;
+        private Sunny.UI.UIButton btn_freremove;
+        private Sunny.UI.UIButton btn_tempadd;
+        private Sunny.UI.UIButton btn_freadd;
+        private Sunny.UI.UIListBox lib_temp;
+        private Sunny.UI.UIListBox lib_frequent;
+        private Sunny.UI.UISmoothLabel uiSmoothLabel1;
     }
 }
 

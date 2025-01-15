@@ -58,5 +58,30 @@ namespace Sys01510.Class
             }
             return dataTable;
         }
+        public DataTable othersToView(List<_others> result)
+        {
+            DataTable dataTable = new DataTable();
+            if (result.Count > 0)
+            {
+                // Add column
+                foreach (var item in _sql_header.Others)
+                    dataTable.Columns.Add(item);
+
+                int rowC = 0;
+                foreach (var item in result)
+                {
+                    dataTable.Rows.Add();
+                    dataTable.Rows[rowC][0] = item.Name;
+                    dataTable.Rows[rowC][1] = item.type;
+                    dataTable.Rows[rowC][2] = item.Account;
+                    dataTable.Rows[rowC][3] = item.Password;
+                    dataTable.Rows[rowC][4] = item.Remark;
+                    rowC++;
+                }
+            }
+            return dataTable;
+        }
+
+        
     }
 }

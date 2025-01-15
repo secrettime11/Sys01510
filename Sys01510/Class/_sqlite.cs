@@ -319,6 +319,111 @@ namespace Sys01510.Model
         }
         #endregion
 
+        #region Others
+        public bool OthersDataAdd(string database, string tableName, List<string> header_, List<_others> data_)
+        {
+            string insertString = String.Empty;
+            int header_count = header_.Count();
+            int counter = 1;
+            int data_counter = 0;
+
+            // Final string send to SQL
+
+            insertString += $@"INSERT INTO {tableName} (";
+            foreach (var header in header_)
+            {
+                // Last column
+                if (counter == header_count)
+                    insertString += $"{header})";
+                else
+                    insertString += $"{header}, ";
+                counter++;
+            }
+            insertString += $" VALUES ";
+            foreach (var item in data_)
+            {
+                if (data_counter == data_.Count() - 1)
+                    insertString += $"('{item.Name}','{item.type}','{item.Account}','{item.Password}','{item.Remark}');" + Environment.NewLine;
+                else
+                    insertString += $"('{item.Name}','{item.type}','{item.Account}','{item.Password}','{item.Remark}'),";
+                data_counter++;
+            }
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+
+        }
+        public bool OthersDataDelete(string database, string tableName, string Name)
+        {
+            string insertString = String.Empty;
+
+            // Final string send to SQL
+            insertString += $@"DELETE FROM {tableName} WHERE Name= '{Name}'";
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+        }
+        #region Folder
+        public bool FolderDataAdd(string database, string tableName, List<string> header_, List<_folder> data_)
+        {
+            string insertString = String.Empty;
+            int header_count = header_.Count();
+            int counter = 1;
+            int data_counter = 0;
+
+            // Final string send to SQL
+
+            insertString += $@"INSERT INTO {tableName} (";
+            foreach (var header in header_)
+            {
+                // Last column
+                if (counter == header_count)
+                    insertString += $"{header})";
+                else
+                    insertString += $"{header}, ";
+                counter++;
+            }
+            insertString += $" VALUES ";
+            foreach (var item in data_)
+            {
+                if (data_counter == data_.Count() - 1)
+                    insertString += $"('{item.Item}','{item.Path}','{item.Fre}');" + Environment.NewLine;
+                else
+                    insertString += $"('{item.Item}','{item.Path}','{item.Fre}'),";
+                data_counter++;
+            }
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+
+        }
+        public bool FolderDataDelete(string database, string tableName, string Item)
+        {
+            string insertString = String.Empty;
+
+            // Final string send to SQL
+            insertString += $@"DELETE FROM {tableName} WHERE Item= '{Item}'";
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+        }
+        #endregion
+        public bool OthersDataUpdate(string database, string tableName, List<string> header_, _others data_, string Name)
+        {
+            string insertString = String.Empty;
+            // Final string send to SQL
+            insertString += $@"UPDATE {tableName} SET Name='{data_.Name}',Type='{data_.type}',Account='{data_.Account}',Password='{data_.Password}',Remark='{data_.Remark}' WHERE Name = '{Name}'";
+            if (Manipulate(database, insertString))
+                return true;
+            else
+                return false;
+        }
+        #endregion
+
         public string CreateTableString(string tableName, List<string> header_)
         {
             int header_count = header_.Count();

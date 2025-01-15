@@ -49,10 +49,12 @@ namespace Sys01510
                     addserverF.ShowDialog();
                     GetServerAll();
                     break;
-
+                case 2:
+                    addothersF addothersF = new addothersF();
+                    addothersF.ShowDialog();
+                    GetOthersAll();
+                    break;
             }
-
-
         }
 
         /// <summary>
@@ -99,7 +101,7 @@ namespace Sys01510
                 foreach (var item in query)
                 {
                     _server temp = new _server();
-                    temp.Name = item.NAME;
+                    temp.Name = item.Name;
                     temp.Ip = item.Ip;
                     temp.Account = item.Account;
                     temp.Password = item.Password;
@@ -110,6 +112,34 @@ namespace Sys01510
                 this.Invoke((MethodInvoker)delegate
                 {
                     dgv_server.DataSource = OutputTable;
+                });
+            }
+        }
+        /// <summary>
+        /// 取得所有其他名單
+        /// </summary>
+        private void GetOthersAll()
+        {
+            using (var db = new MisDB())
+            {
+                var query =
+                    (from c in db.Others
+                     select c).ToList();
+                List<_others> data = new List<_others>();
+                foreach (var item in query)
+                {
+                    _others temp = new _others();
+                    temp.Name = item.Name;
+                    temp.type = item.Type;
+                    temp.Account = item.Account;
+                    temp.Password = item.Password;
+                    temp.Remark = item.Remark;
+                    data.Add(temp);
+                }
+                DataTable OutputTable = _Func.othersToView(data);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    dgv_others.DataSource = OutputTable;
                 });
             }
         }
@@ -189,6 +219,18 @@ namespace Sys01510
 
                     GetServerAll();
                     break;
+                case 2:
+                    string Name_others = string.Empty;
+                    // 取得選取rowName
+                    foreach (DataGridViewRow row in dgv_others.SelectedRows)
+                    {
+                        Name_others += $"{row.Cells[0].Value},";
+                    }
+                    Name_others = Name_others.TrimEnd(',');
+                    _Sqlite.OthersDataDelete(_path.db, _path.db_others, Name_others);
+
+                    GetOthersAll();
+                    break;
             }
 
         }
@@ -215,6 +257,15 @@ namespace Sys01510
 
                     GetServerAll();
                     break;
+                case 2:
+                    var name = dgv_others.Rows[dgv_others.SelectedIndex].Cells[0].Value.ToString();
+                    var query_others = (from c in db.Others where c.Name == name select c).FirstOrDefault();
+
+                    editothersF editothersF = new editothersF(query_others);
+                    editothersF.ShowDialog();
+
+                    GetOthersAll();
+                    break;
             }
 
         }
@@ -230,14 +281,14 @@ namespace Sys01510
             {
                 var query =
                     (from c in db.Servers
-                     where c.NAME.ToString().Contains(name) && c.Ip.Contains(ip) && c.Account.Contains(account) && c.Password.Contains(password)
-                     && c.Remark.Contains(remark) 
+                     where c.Name.ToString().Contains(name) && c.Ip.Contains(ip) && c.Account.Contains(account) && c.Password.Contains(password)
+                     && c.Remark.Contains(remark)
                      select c).ToList();
                 List<_server> data = new List<_server>();
                 foreach (var item in query)
                 {
                     _server temp = new _server();
-                    temp.Name = item.NAME;
+                    temp.Name = item.Name;
                     temp.Ip = item.Ip;
                     temp.Account = item.Account;
                     temp.Password = item.Password;
@@ -264,6 +315,9 @@ namespace Sys01510
                 case 1:
                     GetServerAll();
                     break;
+                case 2:
+                    GetOthersAll();
+                    break;
             }
         }
 
@@ -274,6 +328,48 @@ namespace Sys01510
             txt_account_s.Clear();
             txt_password_s.Clear();
             txt_remark_s.Clear();
+        }
+
+        private void btn_search_o_Click(object sender, EventArgs e)
+        {
+            var name = txt_name_o.Text.Trim();
+            var type = txt_type_o.Text.Trim();
+            var account = txt_account_o.Text.Trim();
+            var password = txt_password_o.Text.Trim();
+            var remark = txt_remark_o.Text.Trim();
+            using (var db = new MisDB())
+            {
+                var query =
+                    (from c in db.Others
+                     where c.Name.ToString().Contains(name) && c.Type.Contains(type) && c.Account.Contains(account) && c.Password.Contains(password)
+                     && c.Remark.Contains(remark)
+                     select c).ToList();
+                List<_others> data = new List<_others>();
+                foreach (var item in query)
+                {
+                    _others temp = new _others();
+                    temp.Name = item.Name;
+                    temp.type = item.Type;
+                    temp.Account = item.Account;
+                    temp.Password = item.Password;
+                    temp.Remark = item.Remark;
+                    data.Add(temp);
+                }
+                DataTable OutputTable = _Func.othersToView(data);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    dgv_others.DataSource = OutputTable;
+                });
+            }
+        }
+
+        private void btn_delete_o_Click(object sender, EventArgs e)
+        {
+            txt_name_o.Clear();
+            txt_type_o.Clear();
+            txt_account_o.Clear();
+            txt_password_o.Clear();
+            txt_remark_o.Clear();
         }
     }
 }

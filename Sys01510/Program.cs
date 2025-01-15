@@ -16,7 +16,7 @@ namespace Sys01510
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountF());
+            Application.Run(new mainF());
         }
     }
 }
